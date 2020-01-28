@@ -1,7 +1,35 @@
-# FB-Lite
-MERN STACK APP.
 
-Objective:  Compare various characteristics on SQL V/S Not Only SQL implementations
+
+x
+
+# FB-Lite MERN STACK APP
+
+A Mongo Express React Node JS stack application. 
+
+MongoDB: A document-based open source datbase.
+Express: A web application framework for Node.js
+React: A JavaScript fornt-end library for building user interfaces.
+Node.js: JavaScript ruin-time environment that executes JavaSCript code outside of a browser.
+Mongoose: Simple, schema-based solution to model applicaiton data.s
+
+
+## Getting Started
+
+Install Node, complete Atlas Registration, host Atlas database in cloud.
+
+Clone repository
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Node And Atlas Mongo Account
+```
+
+### Objective
+
+ Compare various characteristics on SQL V/S Not Only SQL implementations
 of the same application and make a recommendation based on your findings.
 
 1: Row vs Document Model
@@ -18,78 +46,39 @@ of the same application and make a recommendation based on your findings.
 #### (1) design and build a MongoDB database on Atlas cloud; 
 #### (2) connect to this database from either Mongo Compass or Mongo Shell running as desktop applications on your laptop and 
 #### (3) run MongoDB queries from one of the above-mentioned client applications. 
-
-x
-
-# FB-Lite MERN STACK APP
-
-A Mongo Express React Node JS stack application. 
-MongoDB: A document-based open source datbase.
-Express: A web application framework for Node.js
-React: A JavaScript fornt-end library for building user interfaces.
-Node.js: JavaScript ruin-time environment that executes JavaSCript code outside of a browser.
-Mongoose: Simple, schema-based solution to model applicaiton data.s
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+npm install -g nodemon to
+install modules in fb-lite-mern folder and backend folder
 ```
-Give the example
+npm install -g nodemon
 ```
 
-And repeat
+install modules in fb-lite-mern folder and backend folder
 
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+within fb-lite-mern: run "npm install"
+within backend: run "npm install"
 
 ```
-Give an example
-```
 
-### And coding style tests
+The backend folder usually resides outside of the Front end code. 
+Run npm install so the API's modulesfor express, cors, dotenv and mogoose can operate within their own contained environment runnning as a web framework within NodeJS.
 
-Explain what these tests test and why
 
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Backend: cd into backend folder and " nodemon server"
+Front End: on root "npm start"
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* ReactJS
+* MongoDB
+* Express
+* NodeJS
 
 ## Contributing
 
@@ -101,9 +90,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Rajiv Khushiram** - *Full Stack Developer* - (https://github.com/Rajiv-Khushiram)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
