@@ -10,6 +10,21 @@ const memberSchema = new Schema({
         trim: true,
         minLength: 6
     },
+    password: {
+        type: String,
+        required: true,
+        trim: true,
+        minLength: 6
+    },
+    visibility: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    gender: {
+        type: String,
+    },
+
 
 }, {
     timestamps:true,
