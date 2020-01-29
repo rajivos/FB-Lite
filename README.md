@@ -6,7 +6,7 @@ x
 
 A Mongo Express React Node JS stack application. 
 
-MongoDB: A document-based open source datbase.
+MongoDB: A document-based open source database.
 Express: A web application framework for Node.js
 React: A JavaScript fornt-end library for building user interfaces.
 Node.js: JavaScript ruin-time environment that executes JavaSCript code outside of a browser.
@@ -48,29 +48,25 @@ of the same application and make a recommendation based on your findings.
 #### (3) run MongoDB queries from one of the above-mentioned client applications. 
 ### Installing
 
-npm install -g nodemon to
-install modules in fb-lite-mern folder and backend folder
+To start the server you need to have nodemon installed. 
+
 ```
 npm install -g nodemon
 ```
 
-install modules in fb-lite-mern folder and backend folder
-
 ```
-within fb-lite-mern: run "npm install"
-within backend: run "npm install"
+cd  fb-lite-mern && npm install
+cd backend && run npm install
 
 ```
 
-The backend folder usually resides outside of the Front end code. 
-Run npm install so the API's modulesfor express, cors, dotenv and mogoose can operate within their own contained environment runnning as a web framework within NodeJS.
 
 
 
 ## Deployment
 
-Backend: cd into backend folder and " nodemon server"
-Front End: on root "npm start"
+1. cd into backend folder and " nodemon server"
+
 
 
 ## Built With
@@ -90,7 +86,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Rajiv Khushiram** - *Full Stack Developer* - (https://github.com/Rajiv-Khushiram)
+* **Rajiv Khushiram** - *FStack* - (https://github.com/Rajiv-Khushiram)
 
 
 ## License
