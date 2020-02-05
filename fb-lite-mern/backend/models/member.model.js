@@ -24,8 +24,20 @@ const memberSchema = new Schema({
     gender: {
         type: String,
     },
+    screenName: {
+        type: String
+    },
 
-
+    friendRequests: {
+        type: Array
+    },
+    friends: {
+        type: Array
+    },
+    friendRequested: {
+        type:Array
+    }
+    
 }, {
     timestamps:true,
 })

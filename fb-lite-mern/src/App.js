@@ -1,24 +1,55 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 // import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import "./index.css";
+// import MemberProvider from "./components/Contexts/MemberProvider"
 
-import MembersList from "./components/Home/index";
+// import MembersList from "./components/Home/index";
+import HomeContainer from "./components/Home/index";
+import ProfileSettings from "./components/ProfileSettings/index";
+import LoginContainer from "./components/Login/index";
+import RegisterContainer from "./components/Register/index";
+import { ProtectedRoute } from "./components/ProtectedRoute"; 
 
 
+
+const userDefault = {
+  email: "",
+  password: '',
+  visibility:''
+
+}
 
 function App() {
   return (
-    <Router>
-    <div className="container">
-    <br/>
-    <Route path="/members" exact component={MembersList} />
 
+    
+    <div className="container">
+
+    <Router>
+            <Switch>
+    {/* <MemberProvider> */}
+    {/* <Route exact path="/" component={MembersList} />     */}
+    <Route exact path="/login" component={LoginContainer} />    
+    <Route exact path="/logout" component={LoginContainer} />    
+
+    <Route exact path="/register" component={RegisterContainer} />    
+       
+    <ProtectedRoute exact path="/admin"  component={HomeContainer}/>
+    {/* <ProtectedRoute exact path="/admin/:id"  component={HomeContainer}/> */}
+
+
+    {/* </MemberProvider> */}
+    <Route path="*" component={()=>"404 error "} />    
+
+    {/* <Route exact path="/members" component={MembersList} /> */}
     {/* <Route path="/edit/:id" component={EditExercise} />
     <Route path="/create" component={CreateExercise} />
     <Route path="/user" component={CreateUser} /> */}
-    </div>
+
+    </Switch>
   </Router>
+ </div>
   );
 }
 
