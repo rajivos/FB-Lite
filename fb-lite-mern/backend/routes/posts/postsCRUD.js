@@ -36,10 +36,6 @@ router.route("/getRelatedPosts/").post((req, res) => {
   //   console.log(ownerId)
   // console.log(screenName)
 
-  const friendJson = {
-    friends: friends
-  };
-  console.log(friends);
 
   Post.aggregate([
     {

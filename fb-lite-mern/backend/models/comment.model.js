@@ -6,23 +6,19 @@ const commentSchema = new Schema({
     body : {
         type: String,
         required: true,
-        unique: true,
-        trim: true,
-        minLength: 6
     },
     parentId : {
         type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        minLength: 6
     },
-
-
+    memberId : {
+        type: String,
+    }
 }, {
     timestamps:true,
 })
 
-const Member = mongoose.model('Member', memberSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
-module.exports = Member;
+
+
+module.exports = Comment;

@@ -55,12 +55,9 @@ const HomeContainer = props => {
       friendRequests: friendReqs,
       friendRequested: friendRequested
     };
-    setFriendReqs()
-
     axios
-      .get("http://localhost:5000/members/deleteFriend")
+      .post("http://localhost:5000/members/deleteFriend", request)
       .then(res => {
-        // getAllMembers()
       })
       .catch(erro => {
         console.log("get posts error for user: " + erro);
@@ -94,12 +91,13 @@ const HomeContainer = props => {
       authorid: memberInfo._id,
       authorname: memberInfo.screenName
     };
+
+    
     axios
       .post("http://localhost:5000/posts/addPost", post)
       .then(res => {
         if (res.statusText === "OK") {
           getPosts();
-
         }
       })
       .catch(erro => {
@@ -137,6 +135,27 @@ const HomeContainer = props => {
       props.history.push("/login");
     });
   };
+
+  const postComment =(postId) => {
+    console.log("this post belong to postId " + postId)
+    const post = {
+      body: document.getElementById(postId).value,
+      authorid: memberInfo._id,
+      postId: postId,
+      _owner_id: memberInfo._id,
+      authorname: memberInfo.screenName
+    };
+
+    axios
+    .post("http://localhost:5000/comments/addComment", post)
+    .then(res =>  {
+      // console.log("get my friends-> get their posts-> get my posts-> get users which are public and their posts "+ JSON.stringify(res.data));
+
+    })
+    .catch(erro => {
+      console.log("get posts error for user: " + erro);
+    });
+  }
   return (
     <div>
       <h1>Profile Details</h1>
@@ -173,9 +192,9 @@ const HomeContainer = props => {
               !friendRequested.some(friend => friend === member._id) && (
                 <div>
                 <div>{member.screenName} Is Already a Friend</div>
-                {/* <button onClick={() => DeleteFriend(member._id)}>
+                <button onClick={() => DeleteFriend(member._id)}>
                 Delete Friend
-              </button> */}
+              </button>
               </div>
               )}
             {member._id !== memberInfo._id &&
@@ -236,13 +255,14 @@ const HomeContainer = props => {
       <button onClick={PostQuotePostQuote}>Post</button>
 
       {posts.map(post => (
-        <div style={{ borderColor: "red", borderStyle: "solid" }}>
-    
+        <div>
          <div> <div>{JSON.stringify(post.body)}</div>
           <div>{JSON.stringify(post.visibility)}</div>
           <div>by: {JSON.stringify(post.authorname)}</div>
-          <div>At: {moment(post.createdAt).format(" HH:mm DD-MM-YYYY")}</div></div>
-
+          <div>At: {moment(post.createdAt).format("HH:mm DD-MM-YYYY")}</div></div>
+          {/* {post.comments} */}
+          <input  name="comment" id={post._id} type="text" placeholder="Comment Post..." aria-label="Comment Post..." aria-describedby="basic-addon2"/>
+          <button onClick={()=> postComment(post._id)}>Comment</button>
         </div>
       ))}
       <button onClick={logout}>Log out</button>

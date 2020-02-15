@@ -27,8 +27,10 @@ connection.once("open", () => {
 
 const membersRouter = require("./routes/members/membersGenericCRUD");
 const postsreouter = require("./routes/posts/postsCRUD");
+const commentsRouter = require("./routes/comments/commentsGenereicCRUD")
 app.use("/posts", postsreouter);
 app.use("/members", membersRouter);
+app.use("/comments", commentsRouter);
 
 
 app.listen(port, () => {

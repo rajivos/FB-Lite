@@ -92,9 +92,10 @@ router.route('/delete/:id').delete((req, res) => {
   router.route('/deleteFriend').post((req, res) => {
     const id = req.body._id;
     const requesterId =  req.body._ownerId; 
-    const currentFriends = req.body.currentFriends;
-    const friendRequests  = req.body.friendReqs;
-  
+    // const currentFriends = req.body.currentFriends;
+    // const friendRequests  = req.body.friendReqs;
+    console.log(requesterId)
+    console.log(id)
     Member.findOneAndUpdate({'_id': requesterId}, {  $pull: {'friends': id}, 'friendRequests': [] }) 
     .then((info) => 
       {

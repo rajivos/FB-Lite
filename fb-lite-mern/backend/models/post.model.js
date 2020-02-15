@@ -14,6 +14,9 @@ const postSchema = new Schema({
     authorname: {
         type: String,
         required: true,
+    },
+    comments: {
+        type: Array
     }
 }, {
     timestamps:true,
